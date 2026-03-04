@@ -3,7 +3,7 @@
 ```
 ╔══════════════════════════════════════════════════════════╗
 ║          HIGOR CAZUZA — DEVOPS ENGINEER                  ║
-║          Cloud Infrastructure & Platform Engineering     ║
+║    Cloud Infrastructure & Platform Engineering           ║
 ╚══════════════════════════════════════════════════════════╝
 ```
 
