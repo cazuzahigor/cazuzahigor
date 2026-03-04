@@ -1,16 +1,16 @@
 <div align="center">
-
 ```
 ╔══════════════════════════════════════════════════════════╗
-║          HIGOR CAZUZA — SOFTWARE ENGINEER                ║
-║          Java Platform & Backend Systems                 ║
+║          HIGOR CAZUZA — DEVOPS ENGINEER                  ║
+║          Cloud Infrastructure & Platform Engineering     ║
 ╚══════════════════════════════════════════════════════════╝
 ```
 
-[![Java](https://img.shields.io/badge/Java_21|25-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/)
-[![Spring Boot](https://img.shields.io/badge/Spring_Boot_3.x-6DB33F?style=flat-square&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)](https://aws.amazon.com/)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
+[![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)](https://www.terraform.io/)
 [![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=flat-square&logo=ansible&logoColor=white)](https://www.ansible.com/)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)](https://www.kernel.org/)
 
 </div>
@@ -19,80 +19,78 @@
 
 ## `$ whoami`
 
-Backend Software Engineer with a focus on the **Java platform**: from language semantics and runtime behavior to the design of robust and high throughput systems.
+DevOps Engineer focused on cloud-native infrastructure, automation, and continuous delivery. I design and operate environments where provisioning is code, deployments are automated, and observability is built in from day one.
 
-My foundation is in **software engineering fundamentals**: algorithms, data structures, and computational complexity. I apply these not as academic exercises, but as tools for making deliberate design decisions. Choosing the right abstraction, the right data structure, the right concurrency model for the problem at hand.
+My foundation is in **infrastructure engineering fundamentals**: how systems actually run, how networks communicate, how workloads fail under real conditions. That foundation drives how I approach automation decisions — choosing the right orchestration model, the right abstraction layer, the right tradeoff between flexibility and reliability.
 
-I follow the Java platform closely, particularly the evolution brought by **Java 21 through 25**: structured concurrency, value types, and the ongoing refinement of the type system via pattern matching and sealed hierarchies.
+I operate a bare-metal Kubernetes cluster as my primary engineering environment, where I apply production-grade practices across the full infrastructure lifecycle: from OS provisioning to GitOps-driven deployments.
 
-> _"Understanding the machine makes you a better engineer. Understanding the problem makes you an effective one."_
+> _"Infrastructure that you cannot reason about will eventually fail in ways you cannot predict."_
 
 ---
 
 ## Core Competencies
 
-### Java Platform
+### Cloud & Infrastructure
 
 | Area | Detail |
 |---|---|
-| **Language & Type System** | Sealed classes, records, pattern matching for switch, exhaustive type hierarchies |
-| **Concurrency** | Virtual Threads (Project Loom), Structured Concurrency, thread per request versus reactive trade offs |
-| **Java 25 Preview Features** | Value classes (Project Valhalla), string templates, unnamed patterns and variables |
-| **JVM Internals** | Memory model, garbage collection strategies (G1, ZGC), just in time compilation basics |
-| **API Design** | Effective use of the Collections framework, Stream API, Optional, and functional interfaces |
+| **Cloud Platform** | AWS: EC2, S3, IAM, VPC, EKS, CloudWatch |
+| **Infrastructure as Code** | Terraform: resource provisioning, state management, module design |
+| **Container Orchestration** | Kubernetes: workload scheduling, networking, storage, RBAC |
+| **Configuration Management** | Ansible: idempotent provisioning, roles, inventory management |
+| **Containerization** | Docker: image design, multi-stage builds, Compose environments |
 
-### Algorithms & Data Structures
-
-| Area | Detail |
-|---|---|
-| **Core Structures** | Arrays, linked lists, trees (BST, AVL), hash tables, heaps, graphs |
-| **Algorithm Design** | Divide and conquer, dynamic programming, greedy strategies, backtracking |
-| **Complexity Analysis** | Time and space complexity reasoning applied to real implementation decisions |
-| **Sorting & Search** | Comparative and non comparative sorting, binary search and its variants |
-
-### Backend & Persistence
+### CI/CD & GitOps
 
 | Area | Detail |
 |---|---|
-| **Spring Boot 3.x** | Application architecture, dependency injection, transaction management |
-| **Spring Data JPA** | Repository patterns, query derivation, N+1 awareness, fetch strategies |
-| **PostgreSQL** | Relational modeling, query optimization, indexing, ACID guarantees |
-| **API Design** | RESTful conventions, error handling contracts, versioning strategies |
+| **Pipelines** | GitHub Actions: build, test, and deploy workflows |
+| **GitOps** | Infrastructure versioning, pull-based deployments, drift detection |
+| **Version Control** | Git: branching strategies, commit conventions, repository structure |
+
+### Observability & Systems
+
+| Area | Detail |
+|---|---|
+| **Monitoring** | Prometheus: metrics collection, alerting rules, service discovery |
+| **Visualization** | Grafana: infrastructure dashboards, SLO tracking |
+| **Systems** | Linux administration: systemd, networking, storage, security hardening |
+| **Scripting** | Bash: automation scripts, system tooling |
 
 ---
 
 ## Selected Projects
 
-### High Concurrency Service with Java 21 Virtual Threads
+### Bare-Metal Kubernetes Cluster
 
-**Context:** Redesigning the concurrency model of an I/O bound backend service.
-
-**Engineering decisions:**
-
-Adopted **Virtual Threads** to handle high request concurrency without the memory and scheduling overhead of platform threads, trading thread per request simplicity for genuine scalability. Applied **Structured Concurrency** to scope and manage concurrent subtasks with clear lifecycle boundaries, avoiding patterns that introduce resource leaks. Benchmarked with **JMH** to validate throughput gains and confirm latency reduction under load.
-
-**Outcome:** Significant improvement in concurrent request handling and a simpler concurrency model compared to reactive alternatives, without sacrificing readability.
-
----
-
-### Data Centric API with Spring Boot 3 + PostgreSQL
-
-**Context:** Designing a persistence layer that remains correct and performant under real load.
+**Context:** Provisioning and operating a multi-node Kubernetes cluster on physical hardware, without managed cloud abstractions.
 
 **Engineering decisions:**
 
-Modeled the domain carefully to avoid anemic entity design and ensure transactional boundaries aligned with business invariants. Identified and resolved **N+1 query patterns** through fetch strategy tuning and query consolidation. Applied indexing and query analysis to ensure predictable performance as data volume grew.
+Chose K3s as the Kubernetes distribution for its production-grade feature set with reduced operational overhead on bare-metal nodes. Designed the cluster with a dedicated control plane node and separate worker nodes, reflecting real production topology. Applied Ansible to fully automate node provisioning and cluster configuration, ensuring reproducible and idempotent infrastructure state across all machines.
 
-**Outcome:** A maintainable, consistent data layer with predictable behavior under concurrent access and load.
+**Outcome:** A fully operational Kubernetes cluster on bare-metal, managed as code, with automated provisioning from a clean OS install to running workloads.
 
 ---
 
-## Technology Radar
+### Infrastructure Automation with Ansible
 
+**Context:** Eliminating manual configuration drift across Linux servers in a multi-machine environment.
+
+**Engineering decisions:**
+
+Structured playbooks around roles to enforce separation of concerns and enable reuse across different inventory groups. Applied idempotency as a design constraint: every task is safe to run repeatedly without side effects. Used inventory groups to model the real environment, separating control plane, worker, and workstation nodes.
+
+**Outcome:** Full infrastructure configuration expressed as version-controlled Ansible code, with zero manual steps required from OS installation to production-ready state.
+
+---
+
+## Infrastructure Radar
 ```
-Adopted        →  Java 21+, Spring Boot 3, PostgreSQL, Git, Docker
-Experimenting  →  Java 25 preview features (Valhalla), Testcontainers, Structured Concurrency APIs
-Watching       →  GraalVM Native Image, Project Panama, OpenTelemetry for JVM
+Adopted        →  Linux, Docker, Kubernetes (K3s), Ansible, Git, GitHub Actions
+Expanding      →  Terraform, AWS (EKS, EC2, IAM, VPC), Prometheus, Grafana
+Watching       →  OpenTelemetry, ArgoCD, Cilium, Crossplane
 ```
 
 ---
@@ -104,15 +102,14 @@ Watching       →  GraalVM Native Image, Project Panama, OpenTelemetry for JVM
 | | |
 |---|---|
 | 💼 LinkedIn | [linkedin.com/in/higorcazuza](https://linkedin.com/in/higorcazuza) |
-| ✍️ Technical Writing | _Java internals and backend engineering, coming soon_ |
+| 🌐 Web | [asymptora.dev](https://asymptora.dev) |
+| ✍️ Technical Writing | [dev.to/asymptora](https://dev.to/asymptora) |
 | 📬 Email | [higorcazuza@protonmail.com](mailto:higorcazuza@protonmail.com) |
-
-_Available for backend engineering roles with meaningful technical challenges in the Java ecosystem._
 
 </div>
 
 ---
 
 <div align="center">
-<sub>Engineered with intent. Refined over time.</sub>
+<sub>Infrastructure as code. Reliability by design. Delivered continuously.</sub>
 </div>
